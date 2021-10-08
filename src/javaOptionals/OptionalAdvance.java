@@ -5,7 +5,7 @@ import java.util.Optional;
 public class OptionalAdvance {
     public static void main(String[] args) {
 
-        Person james = new Person("James", null);
+        Person james = new Person("James", "utfred@gmail.com");
         Person kaka = new Person("Kaka", "james@utl.com");
 
 /**
@@ -17,7 +17,7 @@ public class OptionalAdvance {
         System.out.println(
                 james.getEmail()
                         .map(String::toLowerCase)
-                        .orElse("Email not provided")
+                        .orElse("user@utl.com")
         );
 
 //        System.out.println(
