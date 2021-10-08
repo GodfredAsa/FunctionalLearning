@@ -11,13 +11,13 @@ public class OptionalAdvance {
 /**
  * gives null Pointer Exception to fix this we wrap the getEmail()
  * with an Optional
-  */
+ */
 
 // Method 1 Implementation
         System.out.println(
-                 james.getEmail()
-                .map(String::toLowerCase)
-                .orElse("Email not provided")
+                james.getEmail()
+                        .map(String::toLowerCase)
+                        .orElse("Email not provided")
         );
 
 //        System.out.println(
@@ -27,15 +27,15 @@ public class OptionalAdvance {
 //        );
 
 //        Method 2
-        if(kaka.getEmail().isPresent()){
+        if (kaka.getEmail().isPresent()) {
             String email = kaka.getEmail().get();
             System.out.println(email);
-        }else
+        } else
             System.out.println("Email not Provided");
     }
 
-    static class Person{
-        private  String name;
+    static class Person {
+        private String name;
         private String email;
 
         public Person(String name, String email) {
@@ -47,9 +47,10 @@ public class OptionalAdvance {
             return name;
         }
 
-// Optional Implementation
+        // Optional Implementation
         public Optional<String> getEmail() {
             return Optional.ofNullable(email);
-            }
+        }
     }
+
 }
